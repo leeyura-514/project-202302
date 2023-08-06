@@ -1,0 +1,141 @@
+@import "_codeset.scss";
+
+@font-face {
+  font-family: "SamsungOneKorean";
+  font-weight: 400;
+  src: url("../../font/SamsungOneKorean-400.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SamsungOneKorean";
+  font-weight: 700;
+  src: url("../../font/SamsungOneKorean-700.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SamsungOneLatin";
+  font-weight: 400;
+  src: url("../../font/SamsungOneLatin-400.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SamsungSharpSans";
+  font-weight: 400;
+  src: url("../../font/SamsungSharpSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SamsungSharpSans";
+  font-weight: 600;
+  src: url("../../font/SamsungSharpSans-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SamsungSharpSans";
+  font-weight: 800;
+  src: url("../../font/SamsungSharpSans-Bold.ttf") format("truetype");
+}
+
+/* font styles */
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+  font-size: 62.5%;
+	font-family: 'SamsungOneKorean', sans-serif;
+  letter-spacing: -0.01em;
+}
+div {
+  font-size: 1.8rem;
+}
+h2 {
+  @include font-36;
+  line-height: 1.222;
+}
+h3 {
+  @include font-30;
+  line-height: 1.233;
+}
+p {
+  @include font-18;
+  line-height: 1.777;
+  letter-spacing: -0.015em;
+}
+
+/* common styles */
+body {
+  &.on {
+    overflow: hidden;
+  }
+}
+.flex-container {
+  display: flex;  
+  .flex-column {
+    display: flex;
+    width: 100%;
+    .col-3 {
+      @include col-3;
+    }
+    .col-4 {
+      @include col-4;
+    }
+    .col-6 {
+      @include col-6;
+    }
+    .col-8 {
+      @include col-8;
+    }
+  }
+}
+.common-inner {
+  max-width: 1436px;
+  margin: 0 auto;
+}
+.blind {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+}
+
+//component
+.sc-title {
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid #000;
+  margin-bottom: 8rem;
+  font-weight: 500;
+  font-family: $font-shrap;
+}
+.contents-title {
+  font-weight: 800;
+  font-family: $font-shrap;
+}
+.date {
+  display: block;
+  line-height: 1.75;
+  @include font-12;
+  font-weight: 400;
+  font-family: $font-latin;
+  color: #000;
+}
+.contents-item {
+  .img-layer {
+    overflow: hidden;
+    img {
+      width: 100%;
+      transition: transform .7s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .info-box {
+    margin-top: 4rem;
+    .title-desc {
+      margin-top: 0.8rem;
+    }
+  }
+  p {
+    margin-top: 4rem;
+  }
+  .date {
+    margin-top: 2.4rem;
+  }
+}
